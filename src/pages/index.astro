@@ -7,7 +7,7 @@ import { contactUrl, siteUrl, sourceUrl } from '../data/site';
 const workflow = [
   ['Scope', 'Approve targets, rules, dates, and delivery responsibilities.'],
   ['Capture', 'Bring notes, scanner output, files, and evidence into the engagement.'],
-  ['Review', 'Move findings through explicit authoring, peer review, and publication states.'],
+  ['Review', 'Prioritise findings through explicit authoring, peer review, and publication states.'],
   ['Report', 'Issue controlled, white-label reports with immutable version history.'],
   ['Verify', 'Track client remediation and complete evidence-backed retests.'],
 ];
@@ -48,6 +48,16 @@ const capabilities = [
     className: 'capability capability-wide',
     title: 'Automation enters through governed interfaces',
     text: 'MCP and API credentials use explicit scopes. Scanner imports create drafts for human review rather than publishing directly to clients.',
+  },
+  {
+    className: 'capability',
+    title: 'Runbooks make testing repeatable',
+    text: 'Publish reusable procedures, apply immutable snapshots to engagements, and link each test step to evidence, findings, or follow-up work.',
+  },
+  {
+    className: 'capability',
+    title: 'Risk views focus remediation',
+    text: 'Filter severity, workflow state, age, deadlines, and client exposure so the next priority is clear.',
   },
 ];
 
