@@ -26,7 +26,8 @@ const socialImage = new URL(image, siteUrl).href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="theme-color" content="#f2f6fa" />
+    <meta name="theme-color" content="#eee0d1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#211815" media="(prefers-color-scheme: dark)" />
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
