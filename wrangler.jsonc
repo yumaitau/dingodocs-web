@@ -5,12 +5,13 @@
   "compatibility_date": "2026-09-02",
   "workers_dev": false,
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "html_handling": "drop-trailing-slash"
   },
   "routes": [
     {
-      "pattern": "dingodocs.yumait.au/*",
-      "zone_id": "5c685c6e0ca646fd6ddae37ed099652c"
+      "pattern": "dingodocs.yumait.au",
+      "custom_domain": true
     }
   ]
 }
