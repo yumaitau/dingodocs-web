@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dingodocs-web",
+  "account_id": "3eed46cc48f123cdff00d116df5e5070",
+  "compatibility_date": "2026-09-02",
+  "workers_dev": false,
+  "assets": {
+    "directory": "./dist"
+  },
+  "routes": [
+    {
+      "pattern": "dingodocs.yumait.au/*",
+      "zone_id": "5c685c6e0ca646fd6ddae37ed099652c"
+    }
+  ]
+}

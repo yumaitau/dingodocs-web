@@ -1,0 +1,26 @@
+---
+import { contactUrl } from '../data/site';
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="shell nav-shell">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">D</span>
+      <span>DingoDocs</span>
+    </a>
+    {!compact && (
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="/#workflow">Workflow</a>
+        <a href="/#capabilities">Capabilities</a>
+        <a href="/#deployment">Deployment</a>
+      </nav>
+    )}
+    <a class="button button-small" href={contactUrl}>Book a call</a>
+  </div>
+</header>

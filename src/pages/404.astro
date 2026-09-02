@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+---
+
+<BaseLayout title="Page not found | DingoDocs" description="The requested DingoDocs page could not be found." noindex>
+  <SiteHeader compact />
+  <main id="main" class="not-found shell">
+    <p class="eyebrow">Error 404</p>
+    <h1>This document is not here.</h1>
+    <p>Return to the DingoDocs site or contact Yuma IT if a legal or product link is missing.</p>
+    <a class="button" href="/">Return home</a>
+  </main>
+  <SiteFooter />
+</BaseLayout>

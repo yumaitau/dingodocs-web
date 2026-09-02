@@ -1,0 +1,75 @@
+---
+import type { LegalPageData } from '../data/legal';
+import { legalEffectiveDate, siteUrl } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteFooter from './SiteFooter.astro';
+import SiteHeader from './SiteHeader.astro';
+
+interface Props {
+  page: LegalPageData;
+}
+
+const { page } = Astro.props;
+const pageUrl = new URL(page.path, siteUrl).href;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: page.heading,
+  description: page.description,
+  url: pageUrl,
+  inLanguage: 'en-AU',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'DingoDocs',
+    url: siteUrl,
+  },
+};
+---
+
+<BaseLayout title={page.title} description={page.description} schema={schema}>
+  <SiteHeader compact />
+  <main id="main" class="legal-page">
+    <section class="legal-hero">
+      <div class="shell legal-hero-grid">
+        <div>
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">DingoDocs</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">{page.heading}</span>
+          </nav>
+          <h1>{page.heading}</h1>
+          <p>{page.lede}</p>
+          <p class="effective-date">Effective {legalEffectiveDate}</p>
+        </div>
+        <div class="legal-stamp" aria-hidden="true">
+          <span>DD</span>
+          <strong>Legal document</strong>
+          <small>Yuma IT</small>
+        </div>
+      </div>
+    </section>
+
+    <div class="shell legal-grid">
+      <nav class="legal-toc" aria-label="Page contents">
+        <strong>On this page</strong>
+        <ol>
+          {page.sections.map((section) => <li><a href={`#${section.id}`}>{section.title}</a></li>)}
+        </ol>
+      </nav>
+
+      <article class="legal-document">
+        {page.sections.map((section) => (
+          <section id={section.id} aria-labelledby={`${section.id}-title`}>
+            <h2 id={`${section.id}-title`}>{section.title}</h2>
+            {section.blocks.map((block) => {
+              if (block.type === 'p') return <p set:html={block.text} />;
+              if (block.type === 'ol') return <ol>{block.items.map((item) => <li set:html={item} />)}</ol>;
+              return <ul>{block.items.map((item) => <li set:html={item} />)}</ul>;
+            })}
+          </section>
+        ))}
+      </article>
+    </div>
+  </main>
+  <SiteFooter />
+</BaseLayout>

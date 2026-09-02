@@ -1,0 +1,27 @@
+---
+import { contactUrl, legalAbn, legalEntity, sourceUrl } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="shell footer-main">
+    <div>
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <span>DingoDocs</span>
+      </a>
+      <p>Self-hosted security assessment delivery, from approved scope to verified remediation.</p>
+    </div>
+    <nav class="footer-links" aria-label="Legal and project links">
+      <a href="/eula">EULA</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/refund-policy">Refunds</a>
+      <a href={sourceUrl}>Source</a>
+      <a href={contactUrl}>Contact</a>
+    </nav>
+  </div>
+  <div class="shell footer-meta">
+    <span>© 2026 {legalEntity}. ABN {legalAbn}.</span>
+    <a href="https://www.yumait.com.au/">A Yuma IT project</a>
+  </div>
+</footer>
