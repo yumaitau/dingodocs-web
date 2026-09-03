@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --harbour-50: oklch(0.935 0.042 54);
   --harbour-100: oklch(0.875 0.069 49);
   --harbour-500: oklch(0.59 0.15 38);
@@ -34,10 +35,12 @@ body {
   margin: 0;
   background: #d8d1c6;
   color: var(--ink);
-  font-family: Geist, "Avenir Next", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  font-family: Inter, Geist, "Avenir Next", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
   font-size: 10.5pt;
   line-height: 1.45;
-  text-rendering: optimizeLegibility;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "clig" 0;
+  text-rendering: geometricPrecision;
 }
 
 a {
@@ -66,9 +69,10 @@ p {
   display: flex;
   width: 210mm;
   min-height: 297mm;
+  height: 297mm;
   flex-direction: column;
   overflow: hidden;
-  padding: 16mm 17mm 15mm;
+  padding: 16mm 17mm 22mm;
   background: var(--paper);
   break-after: page;
   page-break-after: always;
@@ -81,8 +85,27 @@ p {
 
 .page-cover {
   padding: 14mm;
-  background:
-    linear-gradient(118deg, color-mix(in oklch, var(--paper) 90%, var(--harbour-50)) 0 56%, var(--mist) 56% 100%);
+  color: #f3e6d2;
+  background: #16110e;
+}
+
+.page-cover h1,
+.page-cover .wordmark {
+  color: #f3e6d2;
+}
+
+.page-cover .cover-lede {
+  color: #d7c4ae;
+}
+
+.page-cover .eyebrow {
+  color: #e0a070;
+}
+
+.page-cover .cover-meta,
+.page-cover .cover-footer {
+  color: #c7aa92;
+  border-top-color: rgba(242, 210, 166, 0.28);
 }
 
 .cover-top,
@@ -326,7 +349,7 @@ p {
 }
 
 .product-shot-dashboard img {
-  height: 100mm;
+  height: 88mm;
   object-fit: cover;
   object-position: top;
 }
@@ -360,7 +383,8 @@ p {
 }
 
 .product-shot-findings {
-  max-height: 143mm;
+  max-height: 118mm;
+  overflow: hidden;
 }
 
 .product-shot-findings img {
@@ -443,19 +467,30 @@ p {
 
 .product-shot-integrations img {
   width: 100%;
-  height: auto;
+  height: 168mm;
+  object-fit: cover;
+  object-position: top;
 }
 
 .page-deployment {
   justify-content: stretch;
   color: var(--sand-light);
-  background: url('/brand/red-earth-landscape.webp') center / cover;
+  background: var(--charcoal) url("/brand/red-earth-landscape.webp") center / cover no-repeat;
+}
+
+.deployment-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
 }
 
 .deployment-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(27, 18, 14, 0.58), rgba(27, 18, 14, 0.88));
+  background: linear-gradient(rgba(27, 18, 14, 0.42), rgba(27, 18, 14, 0.84));
 }
 
 .deployment-content {
@@ -600,7 +635,7 @@ p {
   }
 }
 
-@media (max-width: 760px) {
+@media screen and (max-width: 760px) {
   .page {
     width: 100%;
     min-height: auto;
