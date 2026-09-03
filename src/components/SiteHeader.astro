@@ -6,6 +6,13 @@ interface Props {
 }
 
 const { compact = false } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const legalLinks = [
+  ['/eula', 'EULA'],
+  ['/terms', 'Terms'],
+  ['/privacy-policy', 'Privacy'],
+  ['/refund-policy', 'Refunds'],
+] as const;
 ---
 
 <header class="site-header">
@@ -14,7 +21,13 @@ const { compact = false } = Astro.props;
       <img class="brand-mark" src="/brand/dingodocs-logo-mark.png" width="32" height="32" alt="" />
       <span>DingoDocs</span>
     </a>
-    {!compact && (
+    {compact ? (
+      <nav class="primary-nav legal-nav" aria-label="Legal documents">
+        {legalLinks.map(([href, label]) => (
+          <a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a>
+        ))}
+      </nav>
+    ) : (
       <nav class="primary-nav" aria-label="Primary navigation">
         <a href="/#workflow">Workflow</a>
         <a href="/#capabilities">Capabilities</a>

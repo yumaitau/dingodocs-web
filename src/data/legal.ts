@@ -32,130 +32,6 @@ const refundHref = '/refund-policy';
 const mail = `<a href="mailto:${legalEmail}">${legalEmail}</a>`;
 const entityLine = `${legalEntity} (ABN ${legalAbn}, ACN ${legalAcn}), trading as ${legalTradingName}`;
 
-export const eulaPage: LegalPageData = {
-  path: eulaHref,
-  title: 'End User Licence Agreement | DingoDocs',
-  description: 'Licence terms for commercial DingoDocs software supplied by Yuma IT, including customer-controlled and AWS Marketplace deployments.',
-  heading: 'End User Licence Agreement',
-  lede: 'This agreement governs commercial DingoDocs software supplied under an order or marketplace offer.',
-  sections: [
-    {
-      id: 'scope',
-      title: '1. Scope and provider',
-      blocks: [
-        { type: 'p', text: `This End User Licence Agreement (<strong>EULA</strong>) is between you and ${entityLine}. Our registered address is ${legalAddress}.` },
-        { type: 'p', text: `This EULA applies to a commercial DingoDocs build, image, update, documentation, or support entitlement supplied under a quote, order form, private offer, marketplace listing, or other ordering document (an <strong>Order</strong>). It should be read with the <a href="${termsHref}">Terms and Conditions</a>, <a href="${privacyHref}">Privacy Policy</a>, and <a href="${refundHref}">Refund Policy</a>.` },
-        { type: 'p', text: 'The DingoDocs community source distribution is licensed separately under the Apache License 2.0. This EULA does not remove rights granted under an applicable open-source licence. Commercial images, marketplace entitlement features, support, services, and branding may have additional rights and restrictions under this EULA and the Order.' },
-      ],
-    },
-    {
-      id: 'acceptance',
-      title: '2. Acceptance and authority',
-      blocks: [
-        { type: 'p', text: 'You accept this EULA by accepting an Order, subscribing through a marketplace, downloading, deploying, accessing, or using commercial DingoDocs. If you act for an organisation, you confirm that you have authority to bind it.' },
-        { type: 'p', text: 'If you do not accept this EULA, do not deploy or use the commercial software. Contact us before use if an authorised procurement document requires different terms.' },
-      ],
-    },
-    {
-      id: 'licence',
-      title: '3. Licence grant',
-      blocks: [
-        { type: 'p', text: 'During the licence term, subject to payment and the Order, we grant you a limited, non-exclusive, non-transferable licence to install, run, and use commercial DingoDocs for your internal professional security-assessment, reporting, remediation, and related business activities.' },
-        { type: 'p', text: 'The licence is limited to the organisations, accounts, environments, users, capacity, regions, and deployment model stated in the Order. Your employees and contractors may use DingoDocs on your behalf if they follow this EULA and you remain responsible for their use.' },
-      ],
-    },
-    {
-      id: 'restrictions',
-      title: '4. Licence restrictions',
-      blocks: [
-        { type: 'p', text: 'Except where an applicable open-source licence or law expressly permits it, you must not:' },
-        { type: 'ul', items: [
-          'copy, resell, rent, lease, sublicense, distribute, or commercially host the commercial software for a third party;',
-          'circumvent marketplace entitlement, licence validation, identity, tenant, approval, audit, or security controls;',
-          'reverse engineer or decompile proprietary portions of a commercial build, except to the limited extent law does not allow this restriction;',
-          'remove ownership, licence, attribution, or security notices;',
-          'use DingoDocs to access, test, collect from, or interfere with systems without authority; or',
-          'use our names, marks, or commercial materials in a way that suggests endorsement or ownership.',
-        ] },
-      ],
-    },
-    {
-      id: 'customer-systems',
-      title: '5. Customer systems and authorised use',
-      blocks: [
-        { type: 'p', text: 'DingoDocs is designed for customer-controlled deployment. Unless an Order assigns a responsibility to us, you are responsible for infrastructure, configuration, backups, identity, access, network controls, credentials, integrations, retention, recovery, and updates.' },
-        { type: 'p', text: 'You must obtain all permissions required for each assessment, target, evidence item, scanner import, client collaboration, and remediation activity. DingoDocs supports professional work but does not grant testing authority or replace legal, risk, or security judgement.' },
-      ],
-    },
-    {
-      id: 'data',
-      title: '6. Customer Data',
-      blocks: [
-        { type: 'p', text: 'You retain ownership of scope records, evidence, findings, reports, configurations, and other content submitted to DingoDocs (<strong>Customer Data</strong>). You grant us only the rights reasonably needed to provide support or services requested under an Order.' },
-        { type: 'p', text: 'We do not receive Customer Data merely because you deploy DingoDocs in your own environment. If you provide Customer Data for support or engage us to host or manage DingoDocs, the Order, documented instructions, applicable law, and any data processing agreement govern that handling.' },
-      ],
-    },
-    {
-      id: 'third-parties',
-      title: '7. Third-party services and open source',
-      blocks: [
-        { type: 'p', text: 'DingoDocs can connect to identity, storage, email, scanner, AI, cloud, marketplace, and other third-party services. You are responsible for their accounts, fees, permissions, configuration, and terms.' },
-        { type: 'p', text: 'Open-source components are governed by their own licence notices. If an open-source licence gives you broader rights for that component, those rights continue.' },
-      ],
-    },
-    {
-      id: 'updates',
-      title: '8. Updates, support, and changes',
-      blocks: [
-        { type: 'p', text: 'We may provide fixes, security updates, and new versions during the term. You must apply supported security updates within a reasonable time. Support scope and response targets are limited to the Order.' },
-        { type: 'p', text: 'We may change features to address security, law, third-party dependencies, or product development. We will not materially reduce paid functionality during a fixed term without reasonable notice, unless an urgent security or legal issue requires faster action.' },
-      ],
-    },
-    {
-      id: 'fees-term',
-      title: '9. Fees, term, and renewal',
-      blocks: [
-        { type: 'p', text: 'Fees, taxes, licence term, metering, capacity, renewal, and payment are set out in the Order or marketplace offer. A subscription renews only as stated there.' },
-        { type: 'p', text: 'Marketplace billing and cancellation are also subject to the marketplace provider’s terms and processes. Our posted Refund Policy preserves rights that cannot lawfully be excluded.' },
-      ],
-    },
-    {
-      id: 'warranties',
-      title: '10. Consumer guarantees and warranties',
-      blocks: [
-        { type: 'p', text: 'Nothing in this EULA excludes, restricts, or modifies a guarantee, right, warranty, or remedy that cannot lawfully be excluded, including under the Australian Consumer Law.' },
-        { type: 'p', text: 'Except for non-excludable rights and an express promise in an Order, commercial DingoDocs is supplied as available. We do not promise uninterrupted or error-free operation, compatibility with every environment or integration, detection of every issue, or achievement of a certification, security, compliance, or business outcome.' },
-      ],
-    },
-    {
-      id: 'liability',
-      title: '11. Liability',
-      blocks: [
-        { type: 'p', text: 'Neither party excludes liability that cannot lawfully be excluded. Subject to that, neither party is liable for indirect or consequential loss, or loss of profit, revenue, opportunity, goodwill, anticipated savings, or data, except to the extent caused by its breach of confidentiality, privacy obligations, fraud, or wilful misconduct.' },
-        { type: 'p', text: 'To the extent permitted by law, each party’s total aggregate liability connected with an Order is limited to fees paid or payable under that Order in the 12 months before the event giving rise to the claim. This limit does not apply where law does not permit it, to unpaid fees, or to infringement of the other party’s intellectual property.' },
-        { type: 'p', text: 'Where law permits a remedy to be limited, our liability is limited, at our option, to resupplying the affected goods or services, paying the cost of resupply, repairing or replacing the affected goods, or paying the cost of repair or replacement.' },
-      ],
-    },
-    {
-      id: 'termination',
-      title: '12. Suspension and termination',
-      blocks: [
-        { type: 'p', text: 'We may suspend licence services we control where reasonably necessary to address a security threat, unlawful use, material breach, marketplace entitlement failure, or undisputed overdue fees after notice. We will limit suspension where practical.' },
-        { type: 'p', text: 'Either party may terminate for a material breach not remedied within 20 business days after written notice, or immediately for insolvency. When the Order ends, commercial licence rights end, accrued fees remain payable, and you remain responsible for exporting and deleting data from customer-controlled systems.' },
-      ],
-    },
-    {
-      id: 'general',
-      title: '13. General',
-      blocks: [
-        { type: 'p', text: 'The Order prevails over this EULA to the extent of a direct conflict. A marketplace term applies to marketplace billing or fulfilment unless it expressly changes another contract term. If a term is unenforceable, it is read down or severed and the remainder continues.' },
-        { type: 'p', text: 'This EULA is governed by the laws of the Australian Capital Territory, Australia. The parties submit to the non-exclusive jurisdiction of its courts. Mandatory laws elsewhere continue where they cannot be excluded.' },
-        { type: 'p', text: `Questions and notices may be sent to ${mail}, ${legalAddress}, or through <a href="${contactUrl}">our contact page</a>.` },
-      ],
-    },
-  ],
-};
-
 export const termsPage: LegalPageData = {
   path: termsHref,
   title: 'Terms and Conditions | DingoDocs',
@@ -377,71 +253,80 @@ export const privacyPage: LegalPageData = {
 export const refundPage: LegalPageData = {
   path: refundHref,
   title: 'Refund Policy | DingoDocs',
-  description: 'DingoDocs refund and cancellation policy for direct and AWS Marketplace purchases, including Australian Consumer Law remedies.',
+  description: 'DingoDocs refund policy covering Australian Consumer Law remedies, subscriptions, AWS Marketplace purchases, and refund requests.',
   heading: 'Refund policy',
-  lede: 'This policy explains refund and cancellation rights for direct and marketplace DingoDocs purchases.',
+  lede: 'This policy explains when we provide refunds or other remedies for DingoDocs and how to make a request.',
   sections: [
     {
       id: 'scope',
       title: '1. Scope',
       blocks: [
-        { type: 'p', text: `This policy applies to paid DingoDocs software, subscriptions, support, and services supplied by ${entityLine}. It forms part of our <a href="${termsHref}">Terms and Conditions</a>.` },
+        { type: 'p', text: `This policy applies to DingoDocs supplied by ${entityLine}. It forms part of the <a href="${termsHref}">Terms and conditions</a>. If an Order gives you a more favourable refund right, that right also applies.` },
+        { type: 'p', text: 'Nothing in this policy excludes, restricts, or modifies rights or remedies that cannot lawfully be excluded, including under the Australian Consumer Law (ACL).' },
         { type: 'p', text: 'The applicable Order identifies whether billing is direct or through a marketplace. Marketplace purchases also follow the marketplace provider’s billing, refund, and cancellation process.' },
       ],
     },
     {
-      id: 'consumer-law',
+      id: 'acl',
       title: '2. Australian Consumer Law',
       blocks: [
-        { type: 'p', text: 'Nothing in this policy excludes, restricts, or modifies rights or remedies that cannot lawfully be excluded, including consumer guarantees under the Australian Consumer Law.' },
-        { type: 'p', text: 'If goods or services fail a non-excludable guarantee, available remedies depend on the nature of the failure and may include correction, repair, replacement, resupply, cancellation, refund, or compensation. Contact us so we can assess the issue promptly.' },
+        { type: 'p', text: 'Where the ACL applies, DingoDocs goods and services come with consumer guarantees. Depending on the failure, you may be entitled to correction, repair, replacement, resupply, cancellation, a refund for an unused portion, compensation for reduced value, or compensation for reasonably foreseeable loss.' },
+        { type: 'p', text: 'A major failure can entitle a consumer to reject goods or cancel services and choose remedies available under the ACL. For a non-major failure, we may first have a reasonable opportunity to correct the problem. ACL rights can also apply to some business purchases.' },
       ],
     },
     {
-      id: 'direct-orders',
-      title: '3. Direct Orders',
+      id: 'refunds',
+      title: '3. When we provide a refund',
       blocks: [
-        { type: 'p', text: 'For a direct Order, fees are non-refundable once the licence term or service has started, except where the Order says otherwise, we agree to a refund, or law requires a remedy.' },
-        { type: 'p', text: 'You may cancel renewal using the notice method and deadline in the Order. Cancellation stops future renewal but does not ordinarily refund the current committed term.' },
-        { type: 'p', text: 'If we end a prepaid Order for convenience or make a materially adverse contract change that you reject as allowed by the Terms, we will refund the prepaid fee for the unused period on a pro-rata basis.' },
-      ],
-    },
-    {
-      id: 'marketplace',
-      title: '4. AWS Marketplace purchases',
-      blocks: [
-        { type: 'p', text: 'AWS Marketplace processes marketplace charges, cancellations, and approved refunds. Review the offer and AWS Marketplace terms before subscribing.' },
-        { type: 'p', text: 'Under the current AWS Marketplace process, cancelling an eligible non-private offer subscription within 48 hours of purchase results in a full software-charge refund. After 48 hours, refund requests are assessed under this policy, the offer, and applicable law. Private-offer refunds require our authorisation.' },
-        { type: 'p', text: 'Usage-based subscriptions can generally be cancelled through the AWS Marketplace console. Contract or upfront agreements may require an AWS Customer Service request or the agreement process shown in the console. Cancellation of future invoices does not itself refund charges already invoiced.' },
-      ],
-    },
-    {
-      id: 'eligible',
-      title: '5. When we may approve a refund',
-      blocks: [
-        { type: 'p', text: 'In addition to mandatory legal remedies, we may approve a full or partial refund where:' },
+        { type: 'p', text: 'We provide a refund or other remedy when required by law. We also refund:' },
         { type: 'ul', items: [
-          'you were charged more than once for the same entitlement;',
-          'a verified billing or metering error caused an incorrect software charge;',
-          'we cannot provide a material paid entitlement and cannot correct the issue within a reasonable time;',
-          'the Order expressly provides a refund right; or',
-          'we agree that exceptional circumstances make a refund fair and reasonable.',
+          'a duplicate payment or confirmed billing or metering error;',
+          'fees paid for an Order we do not accept or never make available;',
+          'prepaid fees for the unused period if we withdraw DingoDocs or terminate an Order for our convenience; and',
+          'any amount an Order expressly says is refundable.',
         ] },
       ],
     },
     {
-      id: 'not-eligible',
-      title: '6. When a refund is not ordinarily available',
+      id: 'change-of-mind',
+      title: '4. Change of mind',
       blocks: [
-        { type: 'p', text: 'Subject to non-excludable law, we do not ordinarily provide a refund for change of mind, unused capacity, failure to cancel renewal in time, customer infrastructure or configuration problems, unsupported changes, third-party outages, or use outside the Order and documentation.' },
-        { type: 'p', text: 'Professional services already performed and reasonable committed costs are not refundable unless the service fails an applicable guarantee or the Order says otherwise.' },
+        { type: 'p', text: 'We do not offer a general change-of-mind refund after DingoDocs has been made available or professional services have started, unless an Order says otherwise. This does not affect any ACL right.' },
+        { type: 'p', text: 'If you cancel before we provide access, licence material, deployment work, or professional services, we will refund fees paid for that unused Order, less any non-recoverable marketplace charge clearly disclosed before purchase.' },
+      ],
+    },
+    {
+      id: 'subscriptions',
+      title: '5. Subscriptions, direct Orders, and services',
+      blocks: [
+        { type: 'p', text: 'Prepaid fees cover the subscription or licence term in the Order. Stopping use or terminating early for convenience does not create a refund for unused time unless the Order or law says otherwise.' },
+        { type: 'p', text: 'You may cancel renewal using the notice method and deadline in the Order. Cancellation stops future renewal but does not ordinarily refund the current committed term.' },
+        { type: 'p', text: 'Professional services fees are refundable for work not performed if we cancel that work, or where law requires a remedy. Properly performed work is not refundable for change of mind.' },
+      ],
+    },
+    {
+      id: 'marketplaces',
+      title: '6. Marketplace and partner purchases',
+      blocks: [
+        { type: 'p', text: 'If you buy through AWS or another marketplace, the marketplace may process the refund through its billing system. Tell both us and the marketplace about the request. A marketplace process does not remove any obligation we have as supplier under applicable law.' },
+        { type: 'p', text: 'Under the current AWS Marketplace process, cancelling an eligible non-private offer subscription within 48 hours of purchase results in a full software-charge refund. After 48 hours, refund requests are assessed under this policy, the offer, and applicable law. Private-offer refunds require our authorisation.' },
+        { type: 'p', text: 'Usage-based subscriptions can generally be cancelled through the AWS Marketplace console. Contract or upfront agreements may require an AWS Customer Service request or the agreement process shown in the console. Cancellation of future invoices does not itself refund charges already invoiced.' },
+        { type: 'p', text: 'If a reseller or partner invoiced you, it may need to process the refund. We will reasonably cooperate with a valid claim relating to fees it paid us.' },
       ],
     },
     {
       id: 'request',
-      title: '7. How to request a refund',
+      title: '7. How to request a remedy',
       blocks: [
-        { type: 'p', text: `Email ${mail} or use <a href="${contactUrl}">our contact page</a>. Include your organisation, Order or AWS agreement identifier, invoice, purchase date, amount, reason, relevant diagnostics, and requested remedy. Do not send passwords, access keys, exploit material, or confidential evidence.` },
+        { type: 'p', text: `Email ${mail} with the subject “DingoDocs refund” or use <a href="${contactUrl}">our contact page</a>. Include:` },
+        { type: 'ol', items: [
+          'your organisation and contact details;',
+          'the Order, invoice, marketplace order number, or other proof of purchase;',
+          'what you purchased and the deployment model;',
+          'what went wrong and when, or why the Order was not used; and',
+          'the remedy you seek.',
+        ] },
+        { type: 'p', text: 'Do not send credentials, live assessment evidence, access keys, exploit material, or sensitive logs by ordinary email. We will provide a secure transfer method if diagnostic material is needed.' },
         { type: 'p', text: 'For an AWS Marketplace purchase, you may also need to start or approve the applicable request in the AWS Marketplace console or through AWS Customer Service.' },
       ],
     },
@@ -449,15 +334,16 @@ export const refundPage: LegalPageData = {
       id: 'assessment',
       title: '8. Assessment and payment',
       blocks: [
-        { type: 'p', text: 'We will acknowledge a complete request, may ask for reasonable evidence, and will provide an outcome within a reasonable time. Complex marketplace, technical, or legal issues can take longer.' },
-        { type: 'p', text: 'Approved direct refunds are returned through the original payment method where practical. Marketplace refunds are processed by the marketplace provider and timing depends on its systems, invoice status, tax treatment, and payment method.' },
+        { type: 'p', text: 'We will acknowledge a complete request within 5 business days and aim to give an outcome within 14 days after receiving information reasonably needed to assess it. Complex technical or marketplace claims may take longer; if so, we will explain why and provide an update.' },
+        { type: 'p', text: 'Approved refunds are returned using the original payment route where practical. Marketplace timing is controlled by the marketplace. Bank and payment processing can take additional time after approval.' },
       ],
     },
     {
-      id: 'contact',
-      title: '9. Contact',
+      id: 'complaints',
+      title: '9. Disputes and contact',
       blocks: [
-        { type: 'p', text: `${legalEntity}, ${legalAddress}; ${mail}; or <a href="${contactUrl}">our contact page</a>.` },
+        { type: 'p', text: `If you disagree with an outcome, reply with the reasons and any new information. You may also write to ${legalAddress}. Nothing prevents you from using rights or complaint paths available under the ACL.` },
+        { type: 'p', text: `Questions about this policy: ${mail}; or <a href="${contactUrl}">our contact page</a>.` },
       ],
     },
   ],
