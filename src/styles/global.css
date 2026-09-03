@@ -531,6 +531,7 @@ p {
 }
 
 .mcp-copy p,
+.mcp-copy .check-list,
 .review-copy p {
   max-width: 58ch;
 }
@@ -568,6 +569,15 @@ p {
   padding-left: 1rem;
   border-left: 3px solid var(--harbour-600);
   color: var(--ink-soft);
+}
+
+.check-list code {
+  padding: 0.08em 0.28em;
+  border-radius: 4px;
+  background: var(--code);
+  color: var(--ink);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.84em;
 }
 
 .deployment-section {

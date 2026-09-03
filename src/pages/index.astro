@@ -6,9 +6,9 @@ import { contactUrl, siteUrl, sourceUrl } from '../data/site';
 
 const workflow = [
   ['Scope', 'Approve targets, rules, dates, and delivery responsibilities.'],
-  ['Capture', 'Bring notes, scanner output, files, and evidence into the engagement.'],
+  ['Capture', 'The agent files CLI output, scanner results, notes, and evidence while it tests.'],
   ['Review', 'Prioritise findings through explicit authoring, peer review, and publication states.'],
-  ['Report', 'Issue controlled, white-label reports with immutable version history.'],
+  ['Report', 'Issue controlled, white-label reports from the findings the work already produced.'],
   ['Verify', 'Track client remediation and complete evidence-backed retests.'],
 ];
 
@@ -46,8 +46,8 @@ const capabilities = [
   },
   {
     className: 'capability capability-wide',
-    title: 'Automation enters through governed interfaces',
-    text: 'MCP and API credentials use explicit scopes. Scanner imports create drafts for human review rather than publishing directly to clients.',
+    title: 'The agent files while it tests',
+    text: 'MCP captures terminal output, scanner imports, testing notes, timeline events, and finding drafts as the agent probes and fuzzes. Clients see none of it until a person publishes.',
   },
   {
     className: 'capability',
@@ -75,7 +75,7 @@ const schema = [
     name: 'DingoDocs',
     applicationCategory: 'SecurityApplication',
     operatingSystem: 'Customer-controlled infrastructure',
-    description: 'Self-hosted penetration testing engagement and reporting platform for scope, evidence, findings, reports, remediation, and retesting.',
+    description: 'Self-hosted penetration testing workspace where an MCP-capable agent captures evidence and finding drafts while it tests, then DingoDocs issues the reviewed report.',
     url: siteUrl,
     codeRepository: sourceUrl,
     license: 'https://www.apache.org/licenses/LICENSE-2.0',
@@ -89,8 +89,8 @@ const schema = [
 ---
 
 <BaseLayout
-  title="DingoDocs | Security assessment delivery, kept in context"
-  description="Self-hosted penetration testing engagement and reporting software for scope, evidence, findings, reports, remediation, and retesting."
+  title="DingoDocs | The agent tests. The record stays."
+  description="Point the MCP-capable agent you already use at DingoDocs. As it probes, fuzzes, and reads scanner output, it files evidence and finding drafts. You review, then issue the report."
   schema={schema}
 >
   <SiteHeader />
@@ -98,12 +98,12 @@ const schema = [
     <section class="hero">
       <div class="shell hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Security assessment delivery</p>
-          <h1>Run assessments from one place.</h1>
-          <p>Keep scope, evidence, findings, reports, and remediation inside one customer-controlled, auditable workspace.</p>
+          <p class="eyebrow">MCP-connected assessment delivery</p>
+          <h1>Test with the agent. File as you go.</h1>
+          <p>Point the AI agent you already use at DingoDocs. As it probes, fuzzes, and reads scanner output, it captures the command, the output, and the finding draft on the engagement. You review. Then you issue the report.</p>
           <div class="actions">
             <a class="button" href={contactUrl}>Book a call</a>
-            <a class="button button-secondary" href="#workflow">See the workflow</a>
+            <a class="button button-secondary" href="#mcp">How MCP files the work</a>
           </div>
         </div>
         <picture class="hero-art">
@@ -127,6 +127,28 @@ const schema = [
             </li>
           ))}
         </ol>
+      </div>
+    </section>
+
+    <section class="mcp-section" id="mcp" aria-labelledby="mcp-title">
+      <div class="shell mcp-grid">
+        <div class="mcp-copy">
+          <p class="eyebrow">Model Context Protocol</p>
+          <h2 id="mcp-title">The agent tests. DingoDocs files.</h2>
+          <p>Connect Grok, Claude, Cursor, or any MCP client with a scoped credential. While it runs Nuclei, Nmap, Burp, ZAP, or a fuzzer, it can store the input, the output, the note, and the write-up without leaving the session.</p>
+          <ol class="check-list">
+            <li>Agent probes and fuzzes in the tools you already run</li>
+            <li><code>capture_evidence</code> stores terminal output and files</li>
+            <li><code>ingest_scanner_results</code> drafts findings from Nuclei, Nmap, Nessus, OpenVAS, ZAP, and Burp</li>
+            <li><code>create_finding_write_up</code> keeps the report body in draft</li>
+            <li>You review and publish. DingoDocs renders the client report</li>
+          </ol>
+          <p>Credentials carry defined scopes. Nothing reaches a client until a person advances the draft.</p>
+          <a class="text-link" href={sourceUrl}>Review the public MCP source</a>
+        </div>
+        <figure class="detail-frame detail-frame-tall">
+          <img src="/product/integrations.webp" width="1440" height="1504" alt="DingoDocs integrations and automation settings" loading="lazy" />
+        </figure>
       </div>
     </section>
 
@@ -166,20 +188,6 @@ const schema = [
       </div>
     </section>
 
-    <section class="mcp-section" aria-labelledby="mcp-title">
-      <div class="shell mcp-grid">
-        <div class="mcp-copy">
-          <h2 id="mcp-title">Capture from the tools testers already use.</h2>
-          <p>Send notes, evidence, files, timeline events, finding drafts, and supported scanner output through DingoDocs MCP and API interfaces.</p>
-          <p>Credentials carry defined scopes. Automated imports remain drafts until a person reviews and advances them.</p>
-          <a class="text-link" href={sourceUrl}>Review the public source</a>
-        </div>
-        <figure class="detail-frame detail-frame-tall">
-          <img src="/product/integrations.webp" width="1440" height="1504" alt="DingoDocs integrations and automation settings" loading="lazy" />
-        </figure>
-      </div>
-    </section>
-
     <section class="review-section" aria-labelledby="review-title">
       <div class="shell review-grid">
         <figure class="detail-frame detail-frame-findings">
@@ -215,9 +223,9 @@ const schema = [
 
     <section class="final-cta" aria-labelledby="final-title">
       <div class="shell final-grid">
-        <h2 id="final-title">Keep the assessment intact.</h2>
+        <h2 id="final-title">Point the agent at the engagement.</h2>
         <div>
-          <p>See how DingoDocs fits your delivery model, client boundary, and reporting requirements.</p>
+          <p>See how DingoDocs captures testing work as it happens, then turns reviewed findings into the report you issue.</p>
           <a class="button" href={contactUrl}>Book a call</a>
         </div>
       </div>
