@@ -39,12 +39,18 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Restore Wrangler credentials
+        env:
+          WRANGLER_AUTH_CONFIG: ${{ secrets.WRANGLER_AUTH_CONFIG }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.config/.wrangler/config"
+          printf '%s' "$WRANGLER_AUTH_CONFIG" | base64 -d > "$HOME/.config/.wrangler/config/default.toml"
+          chmod 600 "$HOME/.config/.wrangler/config/default.toml"
       - name: Deploy Worker
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler deploy
       - name: Verify production
         run: |
           set -euo pipefail
