@@ -1,4 +1,7 @@
 ---
+import '@fontsource-variable/ibm-plex-sans';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
 import '../styles/global.css';
 import { siteName, siteUrl } from '../data/site';
 
@@ -25,9 +28,9 @@ const socialImage = new URL(image, siteUrl).href;
 <html lang="en-AU">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="theme-color" content="#eee0d1" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#211815" media="(prefers-color-scheme: dark)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f4f0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1c1715" media="(prefers-color-scheme: dark)" />
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="icon" href="/brand/dingodocs-logo-mark.png" type="image/png" />

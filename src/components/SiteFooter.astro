@@ -3,14 +3,11 @@ import { contactUrl, legalAbn, legalEntity, sourceUrl } from '../data/site';
 ---
 
 <footer class="site-footer">
-  <div class="shell footer-main">
-    <div>
-      <a class="brand" href="/">
-        <img class="brand-mark" src="/brand/dingodocs-logo-mark.png" width="32" height="32" alt="" />
-        <span>DingoDocs</span>
-      </a>
-      <p>Self-hosted assessment delivery. The agent tests. The record stays.</p>
-    </div>
+  <div class="shell footer">
+    <p class="footer-line">
+      <strong>DingoDocs</strong> is self-hosted assessment delivery from
+      <a href="https://www.yumait.com.au/">Yuma IT</a>. <span class="nowrap">© 2026 {legalEntity}.</span> <span class="nowrap">ABN {legalAbn}.</span>
+    </p>
     <nav class="footer-links" aria-label="Legal and project links">
       <a href="/eula">EULA</a>
       <a href="/terms">Terms</a>
@@ -20,9 +17,5 @@ import { contactUrl, legalAbn, legalEntity, sourceUrl } from '../data/site';
       <a href={sourceUrl}>Source</a>
       <a href={contactUrl}>Contact</a>
     </nav>
-  </div>
-  <div class="shell footer-meta">
-    <span>© 2026 {legalEntity}. ABN {legalAbn}.</span>
-    <a href="https://www.yumait.com.au/">A Yuma IT project</a>
   </div>
 </footer>

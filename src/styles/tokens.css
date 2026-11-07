@@ -1,0 +1,79 @@
+/* Hallmark · tokens · DingoDocs · anchor hue 38 (red earth) */
+:root {
+  color-scheme: light dark;
+
+  /* Colour: warm-tinted neutrals, one red-earth accent */
+  --color-paper: oklch(97.5% 0.006 60);
+  --color-paper-2: oklch(95% 0.008 75);
+  --color-rule: oklch(86% 0.01 65);
+  --color-rule-strong: oklch(70% 0.016 45);
+  --color-muted: oklch(47% 0.014 45);
+  --color-ink-2: oklch(33% 0.014 42);
+  --color-ink: oklch(20% 0.012 40);
+  --color-accent: oklch(50% 0.15 36);
+  --color-accent-hover: oklch(43% 0.135 34);
+  --color-accent-ink: oklch(98% 0.008 60);
+  --color-focus: oklch(56% 0.16 38);
+  --color-band: oklch(19% 0.012 40);
+  --color-band-2: oklch(25% 0.014 40);
+  --color-band-rule: oklch(34% 0.014 42);
+  --color-band-ink: oklch(94% 0.008 60);
+  --color-band-muted: oklch(74% 0.012 55);
+  --color-band-accent: oklch(72% 0.13 45);
+
+  /* Type: IBM Plex Sans (display + body) and IBM Plex Mono (labels, code) */
+  --font-sans: "IBM Plex Sans Variable", "IBM Plex Sans", ui-sans-serif, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: clamp(1.5rem, 1.2rem + 1vw, 1.875rem);
+  --text-2xl: clamp(2rem, 1.5rem + 2vw, 2.875rem);
+  --text-display: clamp(2.5rem, 1.6rem + 4vw, 4.75rem);
+
+  /* Space: 4 pt scale */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+
+  --page-max: 76rem;
+  --page-gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --rule-hair: 1px;
+  --rule-thick: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-paper: oklch(17% 0.01 40);
+    --color-paper-2: oklch(21% 0.012 40);
+    --color-rule: oklch(31% 0.012 42);
+    --color-rule-strong: oklch(45% 0.014 45);
+    --color-muted: oklch(71% 0.012 55);
+    --color-ink-2: oklch(84% 0.01 60);
+    --color-ink: oklch(95% 0.008 60);
+    --color-accent: oklch(70% 0.13 44);
+    --color-accent-hover: oklch(76% 0.11 48);
+    --color-accent-ink: oklch(18% 0.012 40);
+    --color-focus: oklch(74% 0.13 46);
+    --color-band: oklch(13% 0.008 40);
+    --color-band-2: oklch(19% 0.01 40);
+    --color-band-rule: oklch(29% 0.012 42);
+  }
+}

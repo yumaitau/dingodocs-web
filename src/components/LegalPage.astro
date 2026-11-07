@@ -29,25 +29,16 @@ const schema = {
 <BaseLayout title={page.title} description={page.description} schema={schema}>
   <SiteHeader compact />
   <main id="main" class="legal-page">
-    <section class="legal-hero">
-      <div class="shell legal-hero-grid">
-        <div>
-          <nav class="breadcrumbs" aria-label="Breadcrumb">
-            <a href="/">DingoDocs</a>
-            <span aria-hidden="true">/</span>
-            <span aria-current="page">{page.heading}</span>
-          </nav>
-          <h1>{page.heading}</h1>
-          <p>{page.lede}</p>
-          <p class="effective-date">Effective {legalEffectiveDate}</p>
-        </div>
-        <div class="legal-stamp" aria-hidden="true">
-          <span>DD</span>
-          <strong>Legal document</strong>
-          <small>Yuma IT</small>
-        </div>
-      </div>
-    </section>
+    <header class="legal-hero shell">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">DingoDocs</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{page.heading}</span>
+      </nav>
+      <h1>{page.heading}</h1>
+      <p>{page.lede}</p>
+      <p class="effective-date">Effective {legalEffectiveDate}</p>
+    </header>
 
     <div class="shell legal-grid">
       <nav class="legal-toc" aria-label="Page contents">
